@@ -46,7 +46,7 @@ export function Header() {
 
         <div className="flex flex-col gap-3">
           <a
-            href="/cv_HectorHernanDominguezGonzalez.pdf"
+            href="/Hector_Hernan_Dominguez_Gonzalez.pdf"
             download="Hernan_Dominguez_CV.pdf"
           >
             <Button className="flex items-center gap-2" type="">
