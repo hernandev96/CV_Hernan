@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -186,4 +188,19 @@
 
 html {
   font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Background grid pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(165, 180, 252, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(165, 180, 252, 0.05) 1px, transparent 1px);
 }

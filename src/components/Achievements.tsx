@@ -1,61 +1,69 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Trophy, Award, Target, Users, Code, Star } from "lucide-react";
+import { Users, Code, Star, Megaphone } from "lucide-react";
 
-export function Achievements() {
-  const achievements = [];
-
-  const stats = [];
+export function Workshops() {
+  const workshops = [
+    {
+      title: "Instructor de taller de DevOps",
+      institution: "Semana de la Ingeniería Eléctrica UAM Iztapalapa",
+      period: "Año",
+      description:
+        "Preparé e impartí un taller sobre infraestructura como código con Terraform, CI/CD con GitHub Actions, despliegue en EKS y monitoreo con Grafana.",
+      technologies: ["Terraform", "GitHub Actions", "EKS", "Grafana", "DevOps"],
+    },
+  ];
 
   return (
-    <div className="mb-8">
-      <h2 className="mb-6">Logros y Reconocimientos</h2>
-
-      {/* Estadísticas */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        {stats.map((stat, index) => (
-          <Card key={index} className="text-center">
-            <CardContent className="pt-6">
-              <div className="text-2xl font-bold text-primary mb-1">
-                {stat.number}
-              </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </CardContent>
-          </Card>
-        ))}
+    <section id="workshops" className="py-12 border-t border-border/50">
+      <div className="space-y-4 text-center max-w-2xl mx-auto mb-8">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider">
+          <Megaphone className="w-3.5 h-3.5" />
+          <span>Talleres</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+          Talleres y divulgación
+        </h2>
+        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+          Experiencia impartiendo talleres de DevOps y tecnologías cloud.
+        </p>
       </div>
 
-      {/* Logros */}
       <div className="grid gap-4 md:grid-cols-2">
-        {achievements.map((achievement, index) => (
+        {workshops.map((workshop, index) => (
           <Card
             key={index}
-            className={`transition-all hover:shadow-lg ${achievement.bgColor}`}
+            className="border-border/70 hover:border-primary/40 transition-all duration-200 bg-card/50"
           >
             <CardHeader className="pb-3">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 mt-1">{achievement.icon}</div>
-                <div className="flex-1">
-                  <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="text-lg leading-tight">
-                      {achievement.title}
-                    </CardTitle>
-                    <Badge variant="secondary" className="text-xs">
-                      {achievement.category}
-                    </Badge>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {achievement.date}
-                  </p>
-                </div>
+              <div className="flex items-start justify-between gap-2">
+                <CardTitle className="text-lg leading-tight">{workshop.title}</CardTitle>
+                <Badge variant="secondary" className="text-xs">
+                  Taller
+                </Badge>
               </div>
+              <p className="text-sm font-medium text-primary mt-1">{workshop.institution}</p>
+              <p className="text-xs text-muted-foreground mt-0.5">{workshop.period}</p>
             </CardHeader>
-            <CardContent className="pt-0">
-              <p className="text-muted-foreground">{achievement.description}</p>
+            <CardContent className="pt-0 space-y-3">
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {workshop.description}
+              </p>
+              <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/50">
+                {workshop.technologies.map((tech, idx) => (
+                  <Badge
+                    key={idx}
+                    variant="outline"
+                    className="text-xs font-mono bg-background/60 text-muted-foreground border-border/80"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
             </CardContent>
           </Card>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

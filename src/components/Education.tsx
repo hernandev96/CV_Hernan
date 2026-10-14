@@ -1,133 +1,111 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { GraduationCap, Calendar, MapPin, Building } from "lucide-react";
+import {
+  GraduationCap,
+  Calendar,
+  MapPin,
+  Building,
+  Award,
+  CheckCircle2,
+  BookOpen,
+} from "lucide-react";
 
 export function Education() {
   const education = [
     {
-      degree: "Licenciatura en computación",
-      institution:
-        "Universidad Autonoma Metropolitana Unidad Iztapalapa (UAM-I)",
-      location: "Iztapalapa, Ciudad de México",
-      period: "2015-2026",
+      degree: "Licenciatura en Computación",
+      institution: "Universidad Autónoma Metropolitana Unidad Iztapalapa (UAM-I)",
+      location: "Ciudad de México, México",
+      period: "Egreso previsto: 2026",
+      grade: "Egreso 2026",
       description:
-        "Formación integral en programación, algoritmos, bases de datos y desarrollo de software.",
-      grade: "Notable (8.0/10)",
-    },
-  ];
-
-  const certifications = [
-    {
-      course: "Curso de Debugging con Chrome Devtools",
-      institution: "Platzi",
-      period: "2020",
-      description:
-        "En este curso aprendí a como debuggear una pagina web,así como a utilizar varias características de las herramientas de desarrollo que ofrece chrome,como por ejemplo auditar una pagina web,usar chrome como entorno de desarollo.",
-    },
-    {
-      course: "Curso de ECMASCRIPT 6+",
-      institution: "Platzi",
-      period: "2020",
-      description:
-        "En este curso aprendí algunas de las novedades que trae ECMASCRIPT 6,7,8,9 y 10",
-    },
-    {
-      course: "Curso definitivo de HTML y CSS",
-      institution: "Platzi",
-      period: "2020",
-      description:
-        "En este curso aprendí HTML5 y las ventajas que trae así como la implementación de buenas practicas en HTML y CSS",
-    },
-    {
-      course: "Curso de Gestión de Dependencias y paquetes con NPM",
-      institution: "Platzi",
-      period: "2020",
-      description:
-        "El curso me enseño el manejo básico de npm,creación de un proyecto e instalación de dependencias de desarrollo para un proyecto",
-    },
-    {
-      course: "Curso profesional de JavaScript",
-      institution: "Platzi",
-      period: "2020",
-      description:
-        "El curso me enseño distintas cosas que se usan de JS a nivel de desarrollador senior,una de las cosas importantes de este curso es como desarrollar plugins para un pagina web,un poco de como hacer que una pagina web sea una PWA,el manejo y uso de algunos patrones de desarrollo web como el singleton u observer",
+        "Egreso de la Licenciatura en Computación en 2026 por la Universidad Autónoma Metropolitana Unidad Iztapalapa.",
+      keyTopics: [],
     },
   ];
 
   return (
-    <div className="mb-8">
-      <h2 className="mb-6">Educación y Formación</h2>
+    <section id="education" className="py-12 border-t border-border/50">
+      <div className="space-y-4 text-center max-w-2xl mx-auto mb-10">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider">
+          <GraduationCap className="w-3.5 h-3.5" />
+          <span>Formación</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+          Educación
+        </h2>
+        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+          Base académica en ciencias de la computación en la Universidad Autónoma Metropolitana
+          Unidad Iztapalapa.
+        </p>
+      </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        {/* Educación */}
-        <div>
-          <h3 className="mb-4 flex items-center gap-2">
-            <GraduationCap className="w-5 h-5" />
-            Formación Académica
+      <div className="grid gap-8 lg:grid-cols-12 items-start">
+        {/* Formación Académica */}
+        <div className="lg:col-span-12 space-y-4">
+          <h3 className="text-lg font-bold flex items-center gap-2 text-foreground">
+            <GraduationCap className="w-5 h-5 text-primary" />
+            <span>Formación Universitaria</span>
           </h3>
-          <div className="space-y-4">
-            {education.map((edu, index) => (
-              <Card key={index}>
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg">{edu.degree}</CardTitle>
-                  <div className="space-y-1 text-sm text-muted-foreground">
+
+          {education.map((edu, index) => (
+            <Card
+              key={index}
+              className="border-border/70 bg-card/60 backdrop-blur-sm shadow-md"
+            >
+              <CardHeader className="pb-3">
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <CardTitle className="text-lg font-bold">
+                      {edu.degree}
+                    </CardTitle>
+                    <Badge className="bg-primary/10 text-primary border-primary/30 text-xs shrink-0">
+                      {edu.grade}
+                    </Badge>
+                  </div>
+
+                  <p className="text-sm font-medium text-foreground/90">
+                    {edu.institution}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground pt-1">
                     <div className="flex items-center gap-1">
-                      <GraduationCap className="w-4 h-4" />
-                      <span>{edu.institution}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-3.5 h-3.5 text-primary" />
                       <span>{edu.location}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-3.5 h-3.5 text-primary" />
                       <span>{edu.period}</span>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {edu.description}
-                  </p>
-                  <Badge variant="secondary">{edu.grade}</Badge>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+                </div>
+              </CardHeader>
 
-        {/* Certificaciones */}
-        <div>
-          <h3 className="mb-4 flex items-center gap-2">
-            <Badge className="w-5 h-5 rounded-full p-1" />
-            Cursos
-          </h3>
-          <div className="space-y-4">
-            {certifications.map((cert, index) => (
-              <Card key={index}>
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg">{cert.course}</CardTitle>
-                  <div className="space-y-1 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Building className="w-4 h-4" />
-                      <span>{cert.institution}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{cert.period}</span>
-                    </div>
+              <CardContent className="space-y-4">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {edu.description}
+                </p>
+
+                {edu.keyTopics.length > 0 && (
+                  <div className="space-y-2 pt-2 border-t border-border/50">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Áreas de conocimiento clave:
+                    </h4>
+                    <ul className="space-y-1.5 text-xs text-foreground/90">
+                      {edu.keyTopics.map((topic, tIdx) => (
+                        <li key={tIdx} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {cert.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                )}
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
