@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import {
@@ -56,7 +51,8 @@ export function Projects() {
         "ALB",
         "Auto Scaling Group",
       ],
-      githubUrl: "https://github.com/hernandev96",
+      githubUrl:
+        "https://github.com/hernandev96/DevOps-automatizacion-CodeDeploy",
       featured: true,
       statusBadge: "DevOps",
     },
@@ -74,8 +70,15 @@ export function Projects() {
         "Construí interfaces responsivas conectadas a una API REST para visualizar en tiempo real las lecturas de sensores.",
         "Contenericé la aplicación con Docker para estandarizar su despliegue en distintos entornos.",
       ],
-      technologies: ["Angular", "TypeScript", "REST API", "Docker", "Interfaces responsivas"],
-      githubUrl: "https://github.com/hernandev96",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "REST API",
+        "Docker",
+        "Interfaces responsivas",
+      ],
+      githubUrl:
+        "https://github.com/hernandev96/Proyecto-Terminal-Monitoreo-lecturas-agua-calidad",
       featured: false,
     },
   ];
@@ -98,8 +101,9 @@ export function Projects() {
           Proyectos y Soluciones Desarrolladas
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-          Una selección de proyectos destacados que demuestran mi capacidad para diseñar,
-          implementar y automatizar software y DevOps en diferentes stacks.
+          Una selección de proyectos destacados que demuestran mi capacidad para
+          diseñar, implementar y automatizar software y DevOps en diferentes
+          stacks.
         </p>
 
         {/* Filter Tabs */}
@@ -227,7 +231,10 @@ export function Projects() {
                           </h4>
                           <ul className="space-y-1.5 text-xs sm:text-sm">
                             {project.architecturePoints.map((point, ptIdx) => (
-                              <li key={ptIdx} className="flex items-start gap-2">
+                              <li
+                                key={ptIdx}
+                                className="flex items-start gap-2"
+                              >
                                 <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                                 <span className="leading-relaxed">{point}</span>
                               </li>
@@ -241,7 +248,11 @@ export function Projects() {
                           </h4>
                           <div className="flex flex-wrap gap-1.5">
                             {project.technologies.map((t, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs">
+                              <Badge
+                                key={idx}
+                                variant="secondary"
+                                className="text-xs"
+                              >
                                 {t}
                               </Badge>
                             ))}
@@ -291,7 +302,9 @@ export function Projects() {
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
-                      target={project.liveUrl.startsWith("#") ? "_self" : "_blank"}
+                      target={
+                        project.liveUrl.startsWith("#") ? "_self" : "_blank"
+                      }
                       rel="noopener noreferrer"
                       className="shrink-0"
                     >
