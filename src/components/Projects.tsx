@@ -81,6 +81,35 @@ export function Projects() {
         "https://github.com/hernandev96/Proyecto-Terminal-Monitoreo-lecturas-agua-calidad",
       featured: false,
     },
+    {
+      title: "Aplicación Web de Registro y Autenticación con Next.js",
+      category: "Full Stack",
+      subtitle:
+        "Aplicación web con Next.js App Router, i18n y BFF API Routes (Abr 2025 – Dic 2025)",
+      description:
+        "Aplicación web construida con Next.js, TypeScript y Tailwind CSS que implementa inicio de sesión con cookies httpOnly, flujo de registro multipaso con formularios dinámicos e internacionalización.",
+      detailedDescription:
+        "Desarrollé una aplicación web con Next.js (App Router), React y TypeScript enfocada en autenticación y registro de usuarios conectado a una API REST externa. Implementé Route Handlers (/api/login y /api/createUser) como capa BFF para gestionar tokens JWT en cookies httpOnly y adaptar DTOs según la versión de la API. Construí un flujo de registro multipaso (datos personales, cuenta, dirección y fotografía) con barra de progreso, persistencia temporal en sessionStorage, formularios dinámicos basados en esquemas, peticiones con SWR y Axios, notificaciones con react-hot-toast e internacionalización en español e inglés con next-intl.",
+      architecturePoints: [
+        "Implementé Route Handlers en Next.js (/api/login y /api/createUser) como capa BFF para consumir una API REST externa, soportar múltiples versiones de endpoints y almacenar el token JWT en cookies httpOnly.",
+        "Diseñé un flujo de registro multipaso (Personal, Cuenta, Dirección y Fotografía) con barra de progreso visual, validación por paso y persistencia temporal en sessionStorage.",
+        "Construí un generador de formularios dinámicos (DynamicForm y FormField) a partir de esquemas tipados en TypeScript (formSchemas) y mapeo de datos a UserDTO.",
+        "Integré SWR (useSWRMutation) y Axios en hooks personalizados (useLogin, useCreateUser) junto con internacionalización bilingüe (es/en) mediante next-intl y middleware de enrutamiento.",
+      ],
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "next-intl",
+        "SWR",
+        "Axios",
+        "REST API",
+      ],
+      githubUrl: "https://github.com/hernandev96/Aplicacion-nextjs",
+      featured: false,
+      statusBadge: "Next.js",
+    },
   ];
 
   const categories = ["Todos", "DevOps & Cloud", "Full Stack"];

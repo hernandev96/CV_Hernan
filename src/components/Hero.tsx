@@ -125,7 +125,7 @@ export function Hero() {
               <div className="text-xs text-muted-foreground">Experiencias</div>
             </div>
             <div className="p-3 rounded-lg bg-card border border-border/60 text-center lg:text-left shadow-xs">
-              <div className="text-2xl font-bold text-primary font-mono">2</div>
+              <div className="text-2xl font-bold text-primary font-mono">3</div>
               <div className="text-xs text-muted-foreground">Proyectos</div>
             </div>
             <div className="p-3 rounded-lg bg-card border border-border/60 text-center lg:text-left shadow-xs">
